@@ -1,34 +1,9 @@
 version: '3.8'
-networks:
-  network1:
-
 services:
-  siepe-bd:
-    container_name: siepe-bd
-    hostname: siepe-bd
-    image: postgres:16
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: unifesspa
-      POSTGRES_DB: siepe
-    ports:
-      - "5432:5432"
-    volumes:
-      - ./pg_siepe:/var/lib/postgresql/data
-      - ./databases/siepe.sql:/docker-entrypoint-initdb.d/init.sql
-    restart: always
-    networks:
-      - network1
-
-
   php-apache-environment:
     container_name: siepe
     build: .
-    volumes:
-      - ./:/var/www/html/
+    #volumes:
+    #  - ./:/var/www/html/
     ports:
       - 80:80
-    depends_on:
-      - siepe-bd
-    networks:
-      - network1
