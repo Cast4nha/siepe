@@ -14,12 +14,11 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./pg_siepe:/var/lib/postgresql/data
+      # - ./pg_siepe:/var/lib/postgresql/data
       - ./databases/siepe.sql:/docker-entrypoint-initdb.d/init.sql
     restart: always
     networks:
       - network1
-
 
   php-apache-environment:
     container_name: siepe

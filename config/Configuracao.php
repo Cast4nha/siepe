@@ -4,7 +4,7 @@
 */
 class Configuracao
 {
-
+	
 	private static $hostServer = "localhost"; //"siepe.unifesspa.edu.br";
 	private $nameDataBase = "siepe";
 	private $hostDataBase = "siepe-bd";
